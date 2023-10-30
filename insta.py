@@ -3,7 +3,6 @@ import requests
 import pyfiglet
 import time
 import webbrowser
-open.webbrowser('https://t.me/lagontech')
 from colorama import Fore, Style, init
 Z1 = '\x1b[2;31m'
 B = '\x1b[2;36m'
@@ -15,6 +14,7 @@ ascii_banner = pyfiglet.figlet_format(text)
 
 # ASCII art'ı küçült
 ascii_banner_lower = ascii_banner.lower()
+webbrowser.open('https://t.me/lagontech')
 
 # Renklendirilmiş olarak ekrana yazdır
 print(Fore.RED + ascii_banner_lower)
@@ -27,12 +27,10 @@ try:
         ID = lines[0].strip()
         token = lines[1].strip()
 except FileNotFoundError:
-    print(Z1 + "Dosya bulunamadı. '4lbilgi.txt' dosyası oluşturulacak.")
     ID = input(Z1 + 'ID: ')
     token = input(Z1 + 'BOT TOKEN: ')
     with open('4lbilgi.txt', 'w') as file:
         file.write(f"{ID}\n{token}")
-    print("Bilgiler '4lbilgi.txt' dosyasına kaydedildi.")
 
 uus = 'qwertyuiopasdfghjklzxcvbnm._1234567890'
 while True:
